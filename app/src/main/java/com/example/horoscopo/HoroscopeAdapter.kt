@@ -26,6 +26,7 @@ class HoroscopeAdapter(val items: List<Horoscope>, val onClick: (Int) -> Unit) :
     override fun getItemCount(): Int {
         return items.size
     }
+
 }
 
 class HoroscopeViewHolder(view: View) : ViewHolder(view) {
