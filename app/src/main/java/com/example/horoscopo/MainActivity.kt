@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: HoroscopeAdapter
 
+    var selectedPosition = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -33,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         recyclerView = findViewById(R.id.recyclerView)
+    }
+
+        override fun onResume() {
+        super.onResume()
 
         adapter = HoroscopeAdapter(horoscopeList) { position ->
             val horoscope = horoscopeList[position]
@@ -41,10 +47,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra(DetailActivity.EXTRA_HOROSCOPE_ID, horoscope.id)
             startActivity(intent)
+
+            selectedPosition = position
         }
 
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

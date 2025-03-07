@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="horoscope_name">#79FDE5</color>
+    <color name="date">#FABFA2</color>
+    <color name="favorite">#FF2D77</color>
+</resources>
