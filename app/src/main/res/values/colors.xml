@@ -6,5 +6,6 @@
     <color name="primary">#3E2723</color>
     <color name="secundary">#212121</color>
     <color name="tertiary">#004D40</color>
+    <color name="favorite">#CE0000</color>
 
 </resources>
