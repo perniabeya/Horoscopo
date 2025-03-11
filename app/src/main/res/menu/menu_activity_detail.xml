@@ -9,7 +9,7 @@
         app:iconTint="@color/favorite"/>
 
     <item android:id="@+id/action_share"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/ic_share"
         android:title="@string/action_share"
         app:showAsAction="always"/>
 </menu>
